@@ -35,7 +35,6 @@ const Input = ({
               <label className={labelClass} htmlFor={id}>{label}</label>
             </If>
             <div className={`input icon-${iconClass}`}>
-              <span className={`icon ${iconClass} fa fa-fw fa-lg fa-check aria-hidden success`} />
               {children}
             </div>
           </div>
