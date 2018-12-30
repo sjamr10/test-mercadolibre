@@ -3,7 +3,7 @@
 @mixin input-common-style() {
   @include border();
   @include appearance();
-  border-radius: $border-radius-3;
+  border-radius: 2px;
   transition: all 200ms ease-out;
   font: 400 18px system-ui;
   outline: none;
@@ -71,7 +71,7 @@ input:-moz-placeholder {
 
         &:active,
         &:focus {
-          @include border(2px, $primary);
+          @include border(1px, #000);
         }
 
         @include media-breakpoint-down(sm) {
@@ -142,95 +142,6 @@ input:-moz-placeholder {
   &.has-error {
     input {
       border: 2px solid $red !important;
-    }
-  }
-}
-
-/* replacing react-select styles */
-.rcc-select {
-  text-align: left;
-
-  .Select-control {
-    border: none;
-    padding: 3px 6px;
-    @include media-breakpoint-down(md) {
-      padding: 8px 6px;
-    }
-    border-radius: inherit !important;
-  }
-
-  .Select-value,
-  .Select-placeholder {
-    padding: 3px 15px !important;
-    @include media-breakpoint-down(md) {
-      padding: 6px 15px !important;
-    }
-  }
-
-  .Select {
-    @include input-common-style();
-
-    &.is-open > .Select-control {
-      border-radius: inherit !important;
-    }
-
-    &.is-focused,
-    &.is-open,
-    &.is-pseudo-focused {
-      @include border(2px, $primary);
-    }
-
-    .Select-option.is-focused {
-      @include background-opacity($primary, 0.1);
-    }
-
-    .Select-menu-outer {
-      box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-      border: 1px solid $moon-gray;
-      border-radius: $border-radius-3;
-      margin-top: 5px;
-      border-color: transparent;
-      z-index: 99999;
-
-      .Select-option:first-child {
-        border-top-left-radius: $border-radius-3;
-        border-top-right-radius: $border-radius-3;
-      }
-    }
-  }
-}
-
-.rcc-input-range {
-  margin-bottom: 40px;
-
-  .input-range__label--value {
-    top: -2.9rem;
-  }
-
-  .input-range__label-container {
-    top: 0.3rem;
-    font-size: 1rem;
-  }
-
-  .input-range__label--value,
-  .input-range__label--max,
-  .input-range__label--min {
-    font-weight: bold;
-  }
-
-  .input-range__track--active {
-    background-color: $primary;
-  }
-
-  .input-range__slider {
-    background-color: $primary;
-    border: 4px solid $primary;
-    width: 1.8rem;
-    height: 1.8rem;
-    margin-top: -1.15rem;
-
-    &:active {
-      transform: scale(1.1);
     }
   }
 }

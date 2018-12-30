@@ -5,7 +5,7 @@
 }
 
 /* borders */
-@mixin border($size: 2px, $color: $moon-gray) {
+@mixin border($size: 1px, $color: white) {
   border: $size solid $color;
 }
 @mixin border-bottom() {
