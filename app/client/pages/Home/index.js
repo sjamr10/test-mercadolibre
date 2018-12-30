@@ -32,5 +32,5 @@ const generateStore = (state) => {
 };
 
 module.exports = AppRegister(generateStore, [
-  require(`${__dirname}/components/SearchView`),
+  require(`${__dirname}/components/Views/SearchView`),
 ]);
