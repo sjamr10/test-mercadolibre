@@ -1,48 +1,62 @@
-const { Search } = require('app/server/api');
+const { Search, Categories } = require('app/server/api');
 
-const loadSSRData = (search) =>
+
+const getResults = (search) =>
   Promise.all([Search.getItems(search)]);
+
+const getCategories = (id) =>
+  Promise.all([Categories.getCategories(id)]);
+
+const formatCategories = (categories) => categories.map((category) => category.name);
+
+const formatItems = (results) => results.map((item) => ({
+  id: item.id,
+  title: item.title,
+  price: {
+    currency: item.currency_id,
+    amount: item.price,
+    decimals: 0,
+  },
+  picture: item.thumbnail,
+  condition: item.condition,
+  free_shipping: item.shipping.free_shipping,
+}));
 
 const render = (req, res) => {
   const { search } = req.query;
 
-  loadSSRData(search)
+  getResults(search)
     .then((response) => {
       const { results } = response[0].data;
 
-      const items = results.slice(0, 4).map((item) => ({
-        id: item.id,
-        title: item.title,
-        price: {
-          currency: item.currency_id,
-          amount: item.price,
-          decimals: 0,
-        },
-        picture: item.thumbnail,
-        condition: item.condition,
-        free_shipping: item.shipping.free_shipping,
-      }));
+      getCategories(results[0].category_id).then((categoriesResp) => {
+        const categories = formatCategories(categoriesResp[0].data.path_from_root);
 
-      const ssrData = {
-        search,
-        results: {
-          author: {
-            name: 'Sergio',
-            lastname: 'Miranda',
+        const limit = 4;
+        const items = formatItems(results.slice(0, limit));
+
+        const ssrData = {
+          search,
+          results: {
+            author: {
+              name: 'Sergio',
+              lastname: 'Miranda',
+            },
+            categories,
+            items,
           },
-          categories: [],
-          items,
-        },
-      };
+        };
 
-      console.log(ssrData);
+        res.locals.REACT_STATE = {
+          ...res.locals.REACT_STATE,
+          ...ssrData,
+        };
 
-      res.locals.REACT_STATE = {
-        ...res.locals.REACT_STATE,
-        ...ssrData,
-      };
-
-      res.render('items');
+        res.render('items');
+      }).catch((err) => {
+        res.status(500);
+        res.locals.error = err;
+      });
     })
     .catch((err) => {
       res.status(500);
