@@ -8,11 +8,11 @@ if (!__SSR__) {
 
 const Header = (props) => (
   <div className="header">
-    <div className="row justify-content-md-center">
-      <div className="logo col-12 col-md-1">
+    <div className="row justify-content-sm-center">
+      <div className="logo col-12 col-sm-1">
         <img src="/images/Logo_ML2x.png" alt="Logo de Mercadolibre" />
       </div>
-      <div className="search-box col-12 col-md-7">
+      <div className="search-box col-12 col-sm-7">
         {props.children}
       </div>
     </div>
