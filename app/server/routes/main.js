@@ -30,7 +30,6 @@ router.use('/api', (req, res) => {
     timeout: API.TIMEOUT,
     forever: true,
     headers: {
-      'API-TOKEN': API.TOKEN,
     },
   })
     .on('error', (err) => {

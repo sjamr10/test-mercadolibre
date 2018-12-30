@@ -7,7 +7,6 @@ module.exports = yup.object().shape({
     .positive()
     .integer(),
   HOST: yup.string().required(),
-  SECRET: yup.string().required(),
   API: yup.object({
     MAX_RETRIES: yup
       .number()
@@ -18,6 +17,5 @@ module.exports = yup.object().shape({
       .positive()
       .integer(),
     BASE_URL: yup.string(),
-    TOKEN: yup.string(),
   }),
 });
