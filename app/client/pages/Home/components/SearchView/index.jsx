@@ -26,18 +26,14 @@ class SearchView extends Component {
   render() {
     return (
       <div className="view search-view">
-        <div className="row justify-content-md-center">
-          <div className="col-12">
-            <Header>
-              <SearchBox
-                ref={this.search}
-                enterKey={this.submit}
-                placeholder="Nunca dejes de buscar"
-                required
-              />
-            </Header>
-          </div>
-        </div>
+        <Header>
+          <SearchBox
+            ref={this.search}
+            enterKey={this.submit}
+            placeholder="Nunca dejes de buscar"
+            required
+          />
+        </Header>
       </div>
     );
   }
