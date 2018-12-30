@@ -27,6 +27,8 @@ class SearchBox extends Component {
   focus = () => this.textInput.current.focus();
 
   search = () => {
+    const params = this.form.current.elements;
+    params.search.value = 'zapatillas';
     this.form.current.submit();
   }
 
@@ -36,9 +38,11 @@ class SearchBox extends Component {
         <form
           ref={this.form}
           className="d-none"
-          action="/items?search=zapatillas"
+          action="/items"
           method="get"
-        />
+        >
+          <input type="text" name="search" />
+        </form>
         <div className="text col-10 col-md-11">
           <TextInput
             ref={this.textInput}
