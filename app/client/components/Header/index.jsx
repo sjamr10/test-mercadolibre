@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SearchBox from 'app/client/components/input-components/SearchBox';
+import SearchBox from 'app/client/components/SearchBox';
 
 
 if (!__SSR__) {

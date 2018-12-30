@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import TextInput from '../Input/TextInput';
+import TextInput from '../input-components/Input/TextInput';
 
 
 if (!__SSR__) {
