@@ -12,20 +12,13 @@ class SearchBox extends Component {
 
   focus = () => this.textInput.current.focus();
 
-  validateText = () => {
-    const errorMessage = 'El texto ingresado no es válido';
-    const value = this.getValue();
-    const isValid = value !== '';
-    return { isValid, errorMessage };
-  };
-
   render() {
     const validation = this.props.validation || [];
 
     return (
       <TextInput
         {...this.props}
-        validation={[...validation, this.validateText]}
+        validation={[...validation]}
         ref={this.textInput}
         onInput={this.callInput}
       />

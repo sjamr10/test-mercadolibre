@@ -31,7 +31,6 @@ class SearchView extends Component {
             ref={this.search}
             enterKey={this.submit}
             placeholder="Nunca dejes de buscar"
-            required
           />
         </Header>
       </div>
