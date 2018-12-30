@@ -9,28 +9,43 @@ if (!__SSR__) {
 
 
 class SearchBox extends Component {
-  textInput = React.createRef();
+  constructor(props) {
+    super(props);
+
+    this.form = React.createRef();
+    this.textInput = React.createRef();
+  }
+
+  componentDidMount() {
+    this.focus();
+  }
 
   getValue = () => this.textInput.current.getValue();
 
   setValue = (value) => this.textInput.current.setValue(value);
 
-  validate = () => this.textInput.current.validate();
-
   focus = () => this.textInput.current.focus();
 
-  render() {
-    const validation = this.props.validation || [];
+  search = () => {
+    this.form.current.submit();
+  }
 
+  render() {
     return (
       <div className="search-box row">
+        <form
+          ref={this.form}
+          className="d-none"
+          action="/items?search=zapatillas"
+          method="get"
+        />
         <div className="text col-10 col-md-11">
           <TextInput
-            {...this.props}
-            placeholder="Nunca dejes de buscar"
-            validation={[...validation]}
             ref={this.textInput}
-            onInput={this.callInput}
+            {...this.props}
+            enterKey={this.search}
+            placeholder="Nunca dejes de buscar"
+            validation={[]}
           />
         </div>
         <div className="magnifying-glass col-2 col-md-1">
