@@ -1,0 +1,13 @@
+/* Text colors */
+@each $color, $value in $color-list {
+  .color-#{$color} {
+    color: $value;
+  }
+}
+
+/* Background colors */
+@each $color, $value in $color-list {
+  .bg-color-#{$color} {
+    background-color: $value;
+  }
+}

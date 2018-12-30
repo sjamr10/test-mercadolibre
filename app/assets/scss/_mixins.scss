@@ -1,0 +1,61 @@
+/* color */
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+/* borders */
+@mixin border($size: 2px, $color: $moon-gray) {
+  border: $size solid $color;
+}
+@mixin border-bottom() {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+@mixin border-top() {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+@mixin border-right() {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+@mixin border-left() {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* tracked */
+@mixin tracked() {
+  letter-spacing: 0.1em;
+}
+@mixin tracked-tight() {
+  letter-spacing: -0.05em;
+}
+@mixin tracked-mega() {
+  letter-spacing: 0.25em;
+}
+
+/* line height */
+@mixin lh-solid() {
+  line-height: 1;
+}
+@mixin lh-title() {
+  line-height: 1.2;
+}
+@mixin lh-copy() {
+  line-height: 1.5;
+}
+
+/* appearance */
+/* autoprefixer not support appearance */
+@mixin appearance($value: none) {
+  -webkit-appearance: $value;
+  -moz-appearance: $value;
+  -ms-appearance: $value;
+  appearance: $value;
+}
+
+@mixin lh-list() {
+  line-height: 2;
+}

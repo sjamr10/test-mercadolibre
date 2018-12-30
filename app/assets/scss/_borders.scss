@@ -1,0 +1,96 @@
+/* Border radius */
+@each $label, $value in $border-types {
+  .br-#{$label} {
+    border-radius: $value;
+  }
+  .br-#{$label}-top {
+    border-top-left-radius: $value;
+    border-top-right-radius: $value;
+  }
+
+  .br-#{$label}-bottom {
+    border-bottom-left-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+
+  .br-#{$label}-left {
+    border-top-left-radius: $value;
+    border-bottom-left-radius: $value;
+  }
+
+  .br-#{$label}-right {
+    border-top-right-radius: $value;
+    border-bottom-right-radius: $value;
+  }
+
+  .br-#{$label}-top-left {
+    border-top-left-radius: $value;
+  }
+
+  .br-#{$label}-top-right {
+    border-top-right-radius: $value;
+  }
+
+  .br-#{$label}-bottom-left {
+    border-bottom-left-radius: $value;
+  }
+
+  .br-#{$label}-bottom-right {
+    border-bottom-right-radius: $value;
+  }
+}
+
+/* Border width */
+$border-widths: (
+  ("1", $s1px),
+  ("2", $s2px),
+  ("3", $s3px),
+  ("4", $s4px)
+);
+@each $label, $value in $border-widths {
+  .bw-#{$label} {
+    border-width: $value;
+  }
+  .bw-#{$label}-left {
+    border-left-width: $value;
+  }
+  .bw-#{$label}-right {
+    border-right-width: $value;
+  }
+  .bw-#{$label}-bottom {
+    border-bottom-width: $value;
+  }
+  .bw-#{$label}-top {
+    border-top-width: $value;
+  }
+}
+
+/* Border styles */
+$border-styles: solid dotted dashed;
+@each $style in $border-styles {
+  .bs-#{$style} {
+    border-style: $style;
+  }
+  .bs-#{$style}-left {
+    border-left-style: $style;
+  }
+
+  .bs-#{$style}-right {
+    border-right-style: $style;
+  }
+
+  .bs-#{$style}-bottom {
+    border-bottom-style: $style;
+  }
+
+  .bs-#{$style}-top {
+    border-top-style: $style;
+  }
+}
+
+/* Border colors */
+@each $label, $value in $color-list {
+  .bcolor-#{$label} {
+    border-color: $value;
+  }
+}

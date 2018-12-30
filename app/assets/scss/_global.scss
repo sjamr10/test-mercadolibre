@@ -1,0 +1,123 @@
+html,
+body {
+  @include lh-copy();
+  font-size: $font-size;
+  font-family: "SF Text";
+  font-weight: $font-weight;
+  color: $text-color;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include lh-title();
+  color: $near-black;
+  font-weight: $font-weight * 2;
+  font-family: "SF";
+  letter-spacing: -0.05em;
+}
+
+h1 {
+  font-size: $font-size-6;
+}
+h2 {
+  font-size: $font-size-5;
+}
+h3 {
+  font-size: $font-size-4;
+}
+h4 {
+  font-size: $font-size-3;
+}
+h5 {
+  font-size: $font-size-2;
+}
+h6 {
+  font-size: $font-size-1;
+}
+
+hr {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border: none;
+  height: 1px;
+  background-color: $light-silver;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+/** DEPRECATED: instead use .f1-6 */
+.small {
+  font-size: $font-size-1;
+}
+
+.median {
+  font-size: $font-size-2;
+}
+
+.semibig {
+  font-size: $font-size-3;
+}
+
+.big {
+  font-size: $font-size-4;
+}
+
+.superbig {
+  font-size: $font-size-6;
+}
+
+.extrabig {
+  font-size: $font-size-7;
+}
+
+/** DEPRECATED: instead use .bolder */
+.superbold {
+  font-weight: bold;
+}
+
+/** DEPRECATED: instead use .color-primary */
+.primary {
+  color: $primary;
+}
+
+/** DEPRECATED: instead use .color-silver */
+.gray {
+  color: $silver;
+}
+
+/** DEPRECATED: instead use .color-text */
+.text {
+  color: $text-color !important;
+}
+
+@include media-breakpoint-down(sm) {
+  html,
+  body {
+    font-size: $font-size-mobile;
+  }
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+    margin: 0;
+}

@@ -1,0 +1,151 @@
+@import "app/assets/scss/utils.scss";
+
+.rcc-button {
+  width: 100%;
+  outline: 0;
+  color: $white;
+  background-color: $primary;
+  border: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+
+  div {
+    transform: translateZ(0);
+    right: 15px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+
+    .spinner {
+      stroke: rgba(255, 255, 255, 0.7);
+      animation: rotation 1.4s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .circle {
+      stroke-dasharray: 182;
+      stroke-dashoffset: 0;
+      -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+      transform-origin: center;
+      -webkit-animation: turn 1.4s ease-in-out infinite;
+      animation: turn 1.4s ease-in-out infinite;
+    }
+
+    @keyframes turn {
+      0% {
+        stroke-dasharray: 182;
+        stroke-dashoffset: 182;
+      }
+
+      50% {
+        stroke-dasharray: 182;
+        stroke-dashoffset: 46.75;
+      }
+
+      100% {
+        stroke-dasharray: 182;
+        stroke-dashoffset: 178;
+        transform: rotate(720deg);
+      }
+    }
+  }
+
+  &.link {
+    color: $primary !important;
+
+    svg {
+      fill: $primary;
+    }
+  }
+
+  &.outline {
+    @include border(1px, $primary);
+    border-radius: $border-radius-pill;
+    padding: 6px 15px;
+    padding-bottom: 8px;
+    color: $primary;
+    background-color: $white;
+
+    svg {
+      fill: $primary;
+    }
+
+    .spinner {
+      stroke: $primary;
+    }
+  }
+
+  &.clean {
+    padding: 0px;
+    background-color: transparent;
+    color: $near-black;
+
+    svg {
+      fill: $near-black;
+    }
+
+    &:active,
+    &:hover {
+      background-color: transparent;
+      color: $primary;
+
+      svg {
+        fill: $primary;
+      }
+    }
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    background-color: $dark-green;
+    color: $white;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &:hover {
+    background-color: $light-green;
+    color: $white;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &.is-disabled {
+    cursor: default;
+    background-color: $gray;
+    color: $near-white;
+
+    svg {
+      fill: $near-white;
+    }
+  }
+
+  &.is-loading {
+    cursor: default;
+    background-color: $primary;
+    color: $white;
+  }
+}

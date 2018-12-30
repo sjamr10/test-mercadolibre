@@ -1,0 +1,10 @@
+app/public/
+app/public/*
+app/public/*/**
+node_modules
+node_modules/*
+node_modules/**/*
+*.code-workspace
+.DS_Store
+.vscode/settings.json
+backup

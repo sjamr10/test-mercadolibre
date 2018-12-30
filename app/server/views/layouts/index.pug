@@ -1,0 +1,33 @@
+doctype html
+html(lang="es", random-background, scroll-reset)
+  head
+    block seo
+      title Test | Mercadolibre
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    meta(name='x-ua-compatible', content='ie=edge')
+    meta(name='charset', content='utf-8')
+    meta(name='ROBOTS', content='ALL')
+    meta(name='description', content='Test Mercadolibre')
+    link(rel="icon", type="image/x-icon", href="images/favicon.ico")
+
+    block js
+
+    link(rel='stylesheet', href='/css/styles.css', type='text/css')
+
+    each _script in ASSETS_CSS
+      link(rel='stylesheet', href=_script, type='text/css')
+
+    block css
+
+  body
+    block body
+
+    script.
+      window.TEST_MERCADOLIBRE=!{TEST_MERCADOLIBRE}
+      window.__REACT_STATE__=!{escape(JSON.stringify(REACT_STATE || {}))}
+
+    script(src='/js/dll/library.js')
+    each _script in ASSETS_JS
+      script(src=_script)
+
+    block post-body

@@ -1,0 +1,130 @@
+// /* Paddings */
+$size-list: (
+  ("0", 0px, 0px),
+  ("5", $s5px, $s5px),
+  ("10", $s10px, $sm10px),
+  ("15", $s15px, $sm15px),
+  ("20", $s20px, $sm20px),
+  ("30", $s30px, $sm30px),
+  ("40", $s40px, $sm40px)
+);
+
+@each $key, $desktop, $mobile in $size-list {
+  .p-#{$key} {
+    padding: $desktop !important;
+  }
+
+  .p-#{$key}-top {
+    padding-top: $desktop !important;
+  }
+
+  .p-#{$key}-left {
+    padding-left: $desktop !important;
+  }
+
+  .p-#{$key}-right {
+    padding-right: $desktop !important;
+  }
+
+  .p-#{$key}-bottom {
+    padding-bottom: $desktop !important;
+  }
+
+  .p-#{$key}-h {
+    padding: $desktop 0px !important;
+  }
+
+  .p-#{$key}-w {
+    padding: 0px $desktop !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .p-#{$key} {
+      padding: $mobile !important;
+    }
+
+    .p-#{$key}-top {
+      padding-top: $mobile !important;
+    }
+
+    .p-#{$key}-left {
+      padding-left: $mobile !important;
+    }
+
+    .p-#{$key}-right {
+      padding-right: $mobile !important;
+    }
+
+    .p-#{$key}-bottom {
+      padding-bottom: $mobile !important;
+    }
+
+    .p-#{$key}-h {
+      padding: $mobile 0px !important;
+    }
+
+    .p-#{$key}-w {
+      padding: 0px $mobile !important;
+    }
+  }
+}
+
+@each $key, $desktop, $mobile in $size-list {
+  .m-#{$key} {
+    margin: $desktop !important;
+  }
+
+  .m-#{$key}-top {
+    margin-top: $desktop !important;
+  }
+
+  .m-#{$key}-left {
+    margin-left: $desktop !important;
+  }
+
+  .m-#{$key}-right {
+    margin-right: $desktop !important;
+  }
+
+  .m-#{$key}-bottom {
+    margin-bottom: $desktop !important;
+  }
+
+  .m-#{$key}-h {
+    margin: $desktop 0px !important;
+  }
+
+  .m-#{$key}-w {
+    margin: 0px $desktop !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .m-#{$key} {
+      margin: $mobile !important;
+    }
+
+    .m-#{$key}-top {
+      margin-top: $mobile !important;
+    }
+
+    .m-#{$key}-left {
+      margin-left: $mobile !important;
+    }
+
+    .m-#{$key}-right {
+      margin-right: $mobile !important;
+    }
+
+    .m-#{$key}-bottom {
+      margin-bottom: $mobile !important;
+    }
+
+    .m-#{$key}-h {
+      margin: $mobile 0px !important;
+    }
+
+    .m-#{$key}-w {
+      margin: 0px $mobile !important;
+    }
+  }
+}

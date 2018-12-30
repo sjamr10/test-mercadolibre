@@ -1,0 +1,6 @@
+BASE:
+  LOGGER:
+    LEVEL: info
+
+APP:
+  CHUNK_TYPES: production

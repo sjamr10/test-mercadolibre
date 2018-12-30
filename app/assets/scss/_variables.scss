@@ -1,0 +1,104 @@
+$enable-flex: true;
+$enable-grid-classes: true;
+
+/* Fonts */
+$font-size-1: 0.875rem;
+$font-size-2: 1rem;
+$font-size-3: 1.25rem;
+$font-size-4: 1.75rem;
+$font-size-5: 2rem;
+$font-size-6: 2.5rem;
+$font-size-7: 3rem;
+$font-size-8: 5rem;
+$font-size: 14px;
+$font-size-mobile: 14px;
+$font-weight: 200;
+
+/* Sizes */
+$s1px: 0.071rem;
+$s2px: 0.142rem;
+$s3px: 0.214rem;
+$s4px: 0.285rem;
+$s5px: 0.36rem;
+$s10px: 0.7rem;
+$sm10px: 0.57rem;
+$s15px: 1.07rem;
+$sm15px: 0.7rem;
+$s20px: 1.42rem;
+$sm20px: 1.07rem;
+$s30px: 2.14rem;
+$sm30px: 1.42rem;
+$s40px: 2.85rem;
+$sm40px: 2.14rem;
+
+/* Color */
+$black: #000;
+$near-black: #111;
+$gray: #4d4d4f;
+$mid-gray: #555;
+$light-gray: #eee;
+$moon-gray: #ccc;
+$silver: #999;
+$light-silver: #aaa;
+$near-white: #f4f4f4;
+$white: #fff;
+$lime: #b4bd68;
+$ambar: #ffcc01;
+$green: #30b033;
+$light-green: #45b847;
+$dark-green: darken($green, 20%);
+$red: #e67198;
+$light-red: lighten(red, 20%);
+$dark-red: darken(red, 20%);
+$cyan: #4fceab;
+$blue: #6e7ab8;
+$purple: #866ab8;
+$primary: $green;
+$error: $red;
+$text-color: $gray;
+
+$color-list: (
+  ("black", $black),
+  ("near-black", $near-black),
+  ("gray", $gray),
+  ("mid-gray", $mid-gray),
+  ("light-gray", $light-gray),
+  ("moon-gray", $moon-gray),
+  ("silver", $silver),
+  ("light-silver", $light-silver),
+  ("near-white", $near-white),
+  ("white", $white),
+  ("lime", $lime),
+  ("ambar", $ambar),
+  ("green", $green),
+  ("light-green", $light-green),
+  ("dark-green", $dark-green),
+  ("red", $red),
+  ("light-red", $light-red),
+  ("dark-red", $dark-red),
+  ("cyan", $cyan),
+  ("blue", $blue),
+  ("purple", $purple),
+  ("primary", $primary),
+  ("error", $error),
+  ("text-color", $text-color)
+);
+
+/* borders */
+$border-radius-0: 0;
+$border-radius-1: 0.125rem;
+$border-radius-2: 0.25rem;
+$border-radius-3: 0.5rem;
+$border-radius-4: 1rem;
+$border-radius-100: 100%;
+$border-radius-pill: 9999px;
+
+$border-types: (
+  ("0", $border-radius-0),
+  ("1", $border-radius-1),
+  ("2", $border-radius-2),
+  ("3", $border-radius-3),
+  ("4", $border-radius-4),
+  ("100", $border-radius-100),
+  ("pill", $border-radius-pill)
+);

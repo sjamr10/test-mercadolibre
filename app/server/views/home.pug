@@ -1,0 +1,14 @@
+extends layouts/index.pug
+
+block css
+  link(href=MANIFEST['home.css'], rel='stylesheet')
+
+block body
+  - SSR.requireApp('Home', __REACT_STATE__)
+  .home.bg-color-white
+
+    .container
+      .search-view !{SSR.mountComponent('search-view')}
+
+block post-body
+  script(src=MANIFEST['home.js'])

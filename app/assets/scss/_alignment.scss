@@ -1,0 +1,53 @@
+/* Floats */
+.float-right {
+  float: right;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-none {
+  float: none;
+}
+
+.clear-float {
+  clear: both;
+}
+
+.clear-float-left {
+  clear: left;
+}
+
+.clear-float-right {
+  clear: right;
+}
+
+/* Alignment, this complements bootstrap4 alignment styles */
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+/* Wrap text */
+.wrap-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}

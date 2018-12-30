@@ -1,0 +1,42 @@
+@import "app/assets/scss/utils.scss";
+
+.home {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .container {
+    max-width: 840px;
+    flex-grow: 1;
+  }
+
+  .payments img {
+    height: 150px;
+    width: 500px;
+    margin-bottom: -30px;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: 10px;
+      margin-top: 0px;
+    }
+  }
+
+  .footer .logo svg {
+    max-width: 80%;
+    max-height: 40px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .container {
+      margin: 0px;
+      padding: 0px;
+      max-width: 100%;
+
+      .box {
+        border-radius: $border-radius-0;
+        border: none;
+        width: 100%;
+      }
+    }
+  }
+}
