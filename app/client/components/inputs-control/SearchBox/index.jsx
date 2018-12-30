@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import TextInput from '../Input/TextInput';
 
+
+if (!__SSR__) {
+  require('./styles.scss');
+}
+
+
 class SearchBox extends Component {
   textInput = React.createRef();
 
@@ -16,12 +22,21 @@ class SearchBox extends Component {
     const validation = this.props.validation || [];
 
     return (
-      <TextInput
-        {...this.props}
-        validation={[...validation]}
-        ref={this.textInput}
-        onInput={this.callInput}
-      />
+      <div className="search-box row">
+        <div className="text col-10 col-md-11">
+          <TextInput
+            {...this.props}
+            validation={[...validation]}
+            ref={this.textInput}
+            onInput={this.callInput}
+          />
+        </div>
+        <div className="magnifying-glass col-2 col-md-1">
+          <div className="magnifying-glass">
+            <img src="/images/ic_Search2.png" alt="Lupa" />
+          </div>
+        </div>
+      </div>
     );
   }
 }

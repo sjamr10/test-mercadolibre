@@ -69,11 +69,6 @@ input:-moz-placeholder {
           padding: 12px 15px;
         }
 
-        &:active,
-        &:focus {
-          @include border(1px, #000);
-        }
-
         @include media-breakpoint-down(sm) {
           font-size: $font-size-mobile + 2;
         }
