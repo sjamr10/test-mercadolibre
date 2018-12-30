@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import TextInput from '../Input/TextInput';
 
 
@@ -26,6 +27,7 @@ class SearchBox extends Component {
         <div className="text col-10 col-md-11">
           <TextInput
             {...this.props}
+            placeholder="Nunca dejes de buscar"
             validation={[...validation]}
             ref={this.textInput}
             onInput={this.callInput}

@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 
 import Header from 'app/client/components/Header';
-import SearchBox from 'app/client/components/input-components/SearchBox';
-
-import { SearchActions } from 'app/client/pages/Home/reducers/search';
 
 
 if (!__SSR__) {
@@ -12,35 +8,13 @@ if (!__SSR__) {
 }
 
 
-class SearchView extends Component {
-  constructor(props) {
-    super(props);
+const SearchView = () => (
+  <div className="view search-view">
+    <Header />
+  </div>
+);
 
-    this.search = React.createRef();
-  }
-
-  submit = () => {
-    console.log('search');
-  };
-
-  render() {
-    return (
-      <div className="view search-view">
-        <Header>
-          <SearchBox
-            ref={this.search}
-            enterKey={this.submit}
-            placeholder="Nunca dejes de buscar"
-          />
-        </Header>
-      </div>
-    );
-  }
-}
-
-export default connect((state) => state, {
-  ...SearchActions,
-})(SearchView);
+export default SearchView;
 
 export const META = {
   name: 'search-view',
