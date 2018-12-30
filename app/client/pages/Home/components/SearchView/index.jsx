@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Header from 'app/client/components/Header';
-import SearchBox from 'app/client/components/inputs-control/SearchBox';
+import SearchBox from 'app/client/components/input-components/SearchBox';
 
 import { SearchActions } from 'app/client/pages/Home/reducers/search';
 
