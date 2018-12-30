@@ -1,0 +1,14 @@
+extends layouts/index.pug
+
+block css
+  link(href=MANIFEST['items.css'], rel='stylesheet')
+
+block body
+  - SSR.requireApp('Items', __REACT_STATE__)
+  .items.bg-color-white
+
+    .container
+      .items-view !{SSR.mountComponent('items-view')}
+
+block post-body
+  script(src=MANIFEST['items.js'])

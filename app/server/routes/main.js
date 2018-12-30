@@ -11,6 +11,16 @@ router.get('/', (req, res) => {
   res.render('home');
 });
 
+router.get('/items', (req, res) => {
+  console.log('search', req.query.search);
+
+  res.render('items');
+});
+
+router.get('/:id', (req, res) => {
+  res.render('items');
+});
+
 router.use('/api', (req, res) => {
   console.log(`${req.url}`);
   request({
@@ -27,10 +37,6 @@ router.use('/api', (req, res) => {
       console.log(err);
     })
     .pipe(res);
-});
-
-router.get('/:id', (req, res) => {
-  res.render('home');
 });
 
 module.exports = router;

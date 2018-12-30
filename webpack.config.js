@@ -55,6 +55,7 @@ module.exports = {
   entry: {
     // pages
     home: [...hmr, './app/client/pages/Home'],
+    items: [...hmr, './app/client/pages/Items'],
   },
 
   mode: isDevelopment ? 'development' : 'production',
