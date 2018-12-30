@@ -3,11 +3,11 @@ import axiosRetry from 'axios-retry';
 
 export default class Request {
   constructor() {
-    const { MAX_RETRIES, TIMEOUT } = TEST_MERCADOLIBRE.API;
+    const { MAX_RETRIES, TIMEOUT, BASE_URL } = TEST_MERCADOLIBRE.API;
 
     const defaultConfig = {
       timeout: TIMEOUT,
-      baseURL: '/',
+      baseURL: BASE_URL,
     };
 
     this.requestFN = axios.create(defaultConfig);
