@@ -1,5 +1,4 @@
 import React from 'react';
-import ErrorBoundary from '../../ErrorBoundary';
 
 if (!__SSR__) {
   require('./styles.scss');
@@ -27,21 +26,19 @@ const Input = ({
   const labelClass = (typeof label === 'string') ? 'label-small bold text-left d-block' : '';
 
   return (
-    <ErrorBoundary>
-      <div className={`rcc-control rcc-input ${disabledClass} ${errorClass} ${className}`}>
-        <div className="content">
-          <div className={controlGroupClass}>
-            <If condition={label}>
-              <label className={labelClass} htmlFor={id}>{label}</label>
-            </If>
-            <div className={`input icon-${iconClass}`}>
-              {children}
-            </div>
+    <div className={`rcc-control rcc-input ${disabledClass} ${errorClass} ${className}`}>
+      <div className="content">
+        <div className={controlGroupClass}>
+          <If condition={label}>
+            <label className={labelClass} htmlFor={id}>{label}</label>
+          </If>
+          <div className={`input icon-${iconClass}`}>
+            {children}
           </div>
-          <div className={`f1 error-message ${errorClass}`}>{errorMessage}&nbsp;</div>
         </div>
+        <div className={`f1 error-message ${errorClass}`}>{errorMessage}&nbsp;</div>
       </div>
-    </ErrorBoundary>
+    </div>
   );
 };
 
