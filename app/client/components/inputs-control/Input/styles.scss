@@ -5,7 +5,7 @@
   @include appearance();
   border-radius: $border-radius-3;
   transition: all 200ms ease-out;
-  font-size: $font-size + 2;
+  font: 400 18px system-ui;
   outline: none;
   width: 100%;
   color: $text-color;
@@ -13,6 +13,26 @@
 
 input {
   box-shadow: none;
+}
+
+input::-webkit-input-placeholder {
+  font: 200 18px system-ui;
+  color: #999;
+}
+
+input::-moz-placeholder {
+  font: 200 18px system-ui;
+  color: #999;
+}
+
+input:-ms-input-placeholder {
+  font: 200 18px system-ui;
+  color: #999;
+}
+
+input:-moz-placeholder {
+  font: 200 18px system-ui;
+  color: #999;
 }
 
 .rcc-input {

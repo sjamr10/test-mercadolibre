@@ -2,7 +2,7 @@ html,
 body {
   @include lh-copy();
   font-size: $font-size;
-  font-family: "SF Text";
+  font-family: system-ui;
   font-weight: $font-weight;
   color: $text-color;
   width: 100%;
@@ -23,7 +23,7 @@ h6 {
   @include lh-title();
   color: $near-black;
   font-weight: $font-weight * 2;
-  font-family: "SF";
+  font-family: system-ui;
   letter-spacing: -0.05em;
 }
 
