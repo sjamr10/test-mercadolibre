@@ -1,0 +1,26 @@
+@import "app/assets/scss/utils.scss";
+
+.header {
+  background-color: #FFE600;
+
+  .logo {
+    padding: 8px 0px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    img {
+      max-width: 50px;
+    }
+  }
+
+  .search-box {
+    padding-left: 0;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0px 25px;
+    }
+  }
+}
