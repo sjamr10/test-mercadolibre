@@ -1,6 +1,9 @@
 const express = require('express');
 const request = require('request');
 
+const items = require('./handlers/items');
+
+
 const {
   API,
 } = TEST_MERCADOLIBRE;
@@ -11,11 +14,7 @@ router.get('/', (req, res) => {
   res.render('home');
 });
 
-router.get('/items', (req, res) => {
-  console.log('search', req.query.search);
-
-  res.render('items');
-});
+router.get('/items', items.default.render);
 
 router.get('/:id', (req, res) => {
   res.render('items');
