@@ -97,6 +97,17 @@
         align-items: center;
       }
     }
+
+    .condition {
+      font-size: 18px;
+      font-weight: 300;
+
+      @include media-breakpoint-down(xs) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 
   .state-name {

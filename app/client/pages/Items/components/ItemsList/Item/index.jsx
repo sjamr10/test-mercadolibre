@@ -21,13 +21,16 @@ const Item = (props) =>
           </div>
           <div className="free-shipping-col col-sm-auto">
             <div className="free-shipping">
-              <img src="/images/ic_shipping2.png" alt="Logo de envío gratuito" />
+              {props.item.free_shipping ? <img src="/images/ic_shipping2.png" alt="Logo de envío gratuito" /> : ''}
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="title col">
+          <div className="title col-12 col-sm-10">
             {props.item.title}
+          </div>
+          <div className="condition col-12 col-sm-2">
+            {props.item.condition === 'new' ? 'Nuevo' : 'Usado'}
           </div>
         </div>
       </div>
