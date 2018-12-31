@@ -30,7 +30,7 @@ const render = (req, res) => {
               amount: Math.floor(product.price),
               decimals: parseFloat((product.price % 1).toFixed(2)),
             },
-            picture: product.pictures[0],
+            picture: product.pictures[0].url,
             condition: product.condition,
             free_shipping: product.shipping.free_shipping,
             sold_quantity: product.sold_quantity,
