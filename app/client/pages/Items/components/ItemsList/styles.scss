@@ -1,5 +1,18 @@
 @import "app/assets/scss/utils.scss";
 
 .items-list {
+  background-color: #EEE;
+  padding: 16px 192px;
 
+  @include media-breakpoint-down(lg) {
+    padding: 16px 128px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 16px 64px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 16px 32px;
+  }
 }
