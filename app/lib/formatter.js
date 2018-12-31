@@ -1,4 +1,4 @@
-const hundreds = (number) => {
+const thousands = (number) => {
   number = parseInt(number, 10).toString();
   const reg = /(\d+)(\d{3})/;
   while (reg.test(number)) {
@@ -13,6 +13,6 @@ const round = (number) => {
 };
 
 export default {
-  hundreds,
+  thousands,
   round,
 };
