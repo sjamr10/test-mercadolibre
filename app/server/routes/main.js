@@ -1,6 +1,7 @@
 const express = require('express');
 
 const items = require('./handlers/items');
+const product = require('./handlers/product');
 
 
 const router = express.Router();
@@ -11,8 +12,6 @@ router.get('/', (req, res) => {
 
 router.get('/items', items.default.render);
 
-router.get('/:id', (req, res) => {
-  res.render('items');
-});
+router.get('/items/:id', product.default.render);
 
 module.exports = router;
