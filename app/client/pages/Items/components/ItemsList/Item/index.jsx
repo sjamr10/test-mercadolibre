@@ -1,4 +1,5 @@
 import React from 'react';
+import Formatter from 'app/lib/formatter';
 
 
 if (!__SSR__) {
@@ -17,7 +18,7 @@ const Item = (props) =>
       <div className="main col-12 col-sm-7 col-md-5">
         <div className="row">
           <div className="price col-sm-auto">
-            $ {props.item.price.amount}
+            $ {Formatter.thousands(props.item.price.amount)}
           </div>
           <div className="free-shipping-col col-sm-auto">
             <div className="free-shipping">
