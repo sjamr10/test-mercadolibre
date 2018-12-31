@@ -1,0 +1,42 @@
+@import "app/assets/scss/utils.scss";
+
+.product-details {
+  background-color: #EEE;
+  padding: 0px 192px 16px;
+
+  @include media-breakpoint-down(lg) {
+    padding: 0px 128px 16px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 0px 64px 16px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 0px 32px 16px;
+  }
+
+  .picture-col {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 16px;
+
+    @include media-breakpoint-down(xs) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .picture {
+      width: 500px;
+      height: 500px;
+
+      img {
+        width: 100%;
+        max-width: 180px;
+
+        border-radius: 4px;
+      }
+    }
+  }
+}

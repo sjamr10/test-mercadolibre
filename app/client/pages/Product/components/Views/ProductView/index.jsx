@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Header from 'app/client/components/Header';
 import Breadcrumb from 'app/client/components/Breadcrumb';
+import ProductDetails from 'app/client/pages/Product/components/ProductDetails';
 
 
 if (!__SSR__) {
@@ -10,12 +11,17 @@ if (!__SSR__) {
 }
 
 
-const ProductView = (props) => (
-  <div className="view product-view">
-    <Header />
-    <Breadcrumb categories={props.results.categories} />
-  </div>
-);
+const ProductView = (props) => {
+  const { item } = props.product;
+
+  return (
+    <div className="view product-view">
+      <Header />
+      <Breadcrumb categories={item ? item.categories : []} />
+      <ProductDetails product={item} />
+    </div>
+  );
+};
 
 export default connect((state) => state)(ProductView);
 
