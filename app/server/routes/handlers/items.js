@@ -14,8 +14,8 @@ const formatItems = (results) => results.map((item) => ({
   title: item.title,
   price: {
     currency: item.currency_id,
-    amount: item.price,
-    decimals: 0,
+    amount: Math.floor(item.price),
+    decimals: parseFloat((item.price % 1).toFixed(2)),
   },
   picture: item.thumbnail,
   condition: item.condition,
