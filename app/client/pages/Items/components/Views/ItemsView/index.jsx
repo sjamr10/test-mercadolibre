@@ -1,6 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import Header from 'app/client/components/Header';
+import ItemsList from 'app/client/pages/Items/components/ItemsList';
 
 
 if (!__SSR__) {
@@ -8,13 +10,14 @@ if (!__SSR__) {
 }
 
 
-const ItemsView = () => (
+const ItemsView = (props) => (
   <div className="view items-view">
     <Header />
+    <ItemsList items={props.results.items} />
   </div>
 );
 
-export default ItemsView;
+export default connect((state) => state)(ItemsView);
 
 export const META = {
   name: 'items-view',
