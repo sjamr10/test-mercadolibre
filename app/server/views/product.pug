@@ -1,0 +1,14 @@
+extends layouts/index.pug
+
+block css
+  link(href=MANIFEST['product.css'], rel='stylesheet')
+
+block body
+  - SSR.requireApp('Product', __REACT_STATE__)
+  .product.bg-color-white
+
+    .container
+      .product-view !{SSR.mountComponent('product-view')}
+
+block post-body
+  script(src=MANIFEST['product.js'])
