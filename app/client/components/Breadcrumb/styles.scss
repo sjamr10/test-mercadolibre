@@ -1,0 +1,40 @@
+@import "app/assets/scss/utils.scss";
+
+.breadcrumb {
+  padding: 16px 192px;
+
+  @include media-breakpoint-down(lg) {
+    padding: 16px 128px;
+  }
+
+  @include media-breakpoint-down(md) {
+    padding: 16px 64px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 16px 32px;
+  }
+
+  font-size: 14px;
+
+  div {
+    padding-left: 0px;
+  }
+
+  .category {
+    color: #999999;
+    font-weight: 350;
+  }
+
+  .arrow {
+    color: #999999;
+    font-weight: 350;
+
+    padding: 0 8px;
+  }
+
+  .current-category {
+    color: #666666;
+    font-weight: 500;
+  }
+}
