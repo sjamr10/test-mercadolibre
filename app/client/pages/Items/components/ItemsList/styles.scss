@@ -2,14 +2,14 @@
 
 .items-list {
   background-color: #EEE;
-  padding: 0px 192px 16px;
+  padding: 0px 80px 16px;
 
   @include media-breakpoint-down(lg) {
-    padding: 0px 128px 16px;
+    padding: 0px 64px 16px;
   }
 
   @include media-breakpoint-down(md) {
-    padding: 0px 64px 16px;
+    padding: 0px 48px 16px;
   }
 
   @include media-breakpoint-down(sm) {
