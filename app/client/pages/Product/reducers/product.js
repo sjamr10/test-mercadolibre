@@ -1,15 +1,15 @@
 const defaultState = {
-  results: [],
+  product: {},
 };
 
-export const SET_RESULTS = 'SET_RESULTS';
+export const SET_PRODUCT = 'SET_PRODUCT';
 
 export default function (state = defaultState, action) {
   switch (action.type) {
-    case SET_RESULTS: {
+    case SET_PRODUCT: {
       return {
         ...state,
-        results: action.payload,
+        product: action.payload,
       };
     }
 
@@ -20,7 +20,7 @@ export default function (state = defaultState, action) {
 }
 
 export const Actions = {
-  setResults: (payload) => (dispatch) => {
-    dispatch({ type: 'SET_RESULTS', payload });
+  setProduct: (payload) => (dispatch) => {
+    dispatch({ type: 'SET_PRODUCTS', payload });
   },
 };
