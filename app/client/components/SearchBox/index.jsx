@@ -28,7 +28,7 @@ class SearchBox extends Component {
 
   search = () => {
     const params = this.form.current.elements;
-    params.search.value = 'zapatillas';
+    params.search.value = 'ipod';
     this.form.current.submit();
   }
 
@@ -43,7 +43,7 @@ class SearchBox extends Component {
         >
           <input type="text" name="search" />
         </form>
-        <div className="text col-10 col-md-11">
+        <div className="text col-9 col-lg-11">
           <TextInput
             ref={this.textInput}
             {...this.props}
@@ -52,8 +52,8 @@ class SearchBox extends Component {
             validation={[]}
           />
         </div>
-        <div className="magnifying-glass col-2 col-md-1">
-          <div className="magnifying-glass">
+        <div className="magnifying-glass col-3 col-lg-1">
+          <div className="magnifying-glass" onClick={this.search} >
             <img src="/images/ic_Search2.png" alt="Lupa" />
           </div>
         </div>
