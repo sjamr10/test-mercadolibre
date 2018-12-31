@@ -11,13 +11,18 @@ const Item = (props) =>
     <div className="item row">
       <div className="picture-col col-12 col-sm-auto">
         <div className="picture">
-          <img src={props.item.picture} alt="Logo de Mercadolibre" />
+          <img src={props.item.picture} alt="Foto del producto" />
         </div>
       </div>
       <div className="main col-12 col-sm-7 col-md-5">
         <div className="row">
-          <div className="price col">
+          <div className="price col-sm-auto">
             $ {props.item.price.amount}
+          </div>
+          <div className="free-shipping-col col-sm-auto">
+            <div className="free-shipping">
+              <img src="/images/ic_shipping2.png" alt="Logo de envío gratuito" />
+            </div>
           </div>
         </div>
         <div className="row">
