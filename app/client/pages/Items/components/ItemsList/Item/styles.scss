@@ -5,12 +5,22 @@
   padding-bottom: 16px;
   margin-bottom: 3px;
 
+  @include media-breakpoint-down(xs) {
+    padding-top: 4px;
+  }
+
   background-color: #FFF;
 
   .picture-col {
     padding-left: 0;
     padding-right: 0;
     margin-left: 16px;
+
+    @include media-breakpoint-down(xs) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
     .picture {
       width: 180px;
@@ -29,10 +39,43 @@
     padding-left: 16px;
     padding-right: 0;
 
-    font-size: 18px;
+    .price {
+      padding-top: 16px;
+      padding-bottom: 32px;
+
+      font-size: 24px;
+      font-weight: 350;
+
+      @include media-breakpoint-down(xs) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding-top: 4px;
+        padding-bottom: 16px;
+      }
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 300;
+
+      @include media-breakpoint-down(xs) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 
   .state-name {
+    padding-top: 32px;
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 16px;
+    }
+
     font-size: 12px;
+    font-weight: 250;
   }
 }

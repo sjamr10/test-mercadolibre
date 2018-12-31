@@ -14,10 +14,19 @@ const Item = (props) =>
           <img src={props.item.picture} alt="Logo de Mercadolibre" />
         </div>
       </div>
-      <div className="main col-12 col-sm-5">
-        {props.item.title}
+      <div className="main col-12 col-sm-7 col-md-5">
+        <div className="row">
+          <div className="price col">
+            $ {props.item.price.amount}
+          </div>
+        </div>
+        <div className="row">
+          <div className="title col">
+            {props.item.title}
+          </div>
+        </div>
       </div>
-      <div className="state-name col-3 text-center">
+      <div className="state-name col-12 col-md-3 text-center">
         {props.item.state_name}
       </div>
     </div>
