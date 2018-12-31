@@ -1,19 +1,20 @@
 import React from 'react';
 
+import Item from './Item';
 
 if (!__SSR__) {
   require('./styles.scss');
 }
 
 
-const ItemsList = () => (
-  <div className="items-list">
-    <div className="row justify-content-sm-center">
-      <div className="logo col-12 col-sm-1">
-        Items
-      </div>
+const ItemsList = (props) => {
+  const { items } = props;
+
+  return (
+    <div className="items-list">
+      {items ? items.map((item) => (<Item key={item.id} item={item} />)) : ''}
     </div>
-  </div>
-);
+  );
+};
 
 export default ItemsList;
