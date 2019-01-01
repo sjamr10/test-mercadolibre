@@ -11,7 +11,7 @@ const ItemsList = (props) => {
   const { items } = props;
 
   return (
-    <div className="items-list">
+    <div className="rcc-items-list">
       {items ? items.map((item) => (<Item key={item.id} item={item} />)) : ''}
     </div>
   );

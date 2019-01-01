@@ -9,7 +9,7 @@ if (!__SSR__) {
 
 const Item = (props) =>
   (
-    <div className="item row">
+    <div className="rcc-item row">
       <div className="picture-col col-12 col-sm-auto">
         <div className="picture">
           <img src={props.item.picture} alt="Foto del producto" />

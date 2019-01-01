@@ -34,7 +34,7 @@ class SearchBox extends Component {
 
   render() {
     return (
-      <div className="search-box row">
+      <div className="rcc-search-box row">
         <form
           ref={this.form}
           className="d-none"

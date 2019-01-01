@@ -10,7 +10,7 @@ const Breadcrumb = (props) => {
   const { categories } = props;
 
   return (
-    <div className="breadcrumb row">
+    <div className="rcc-breadcrumb row">
       <div className="col-12">
         {
           categories ?
@@ -24,7 +24,7 @@ const Breadcrumb = (props) => {
                 <span className="arrow">
                   {'>'}
                 </span>
-               </span>))
+              </span>))
             :
               ''
         }
