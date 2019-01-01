@@ -53,7 +53,7 @@ $dark-red: darken(red, 20%);
 $cyan: #4fceab;
 $blue: #6e7ab8;
 $purple: #866ab8;
-$primary: $green;
+$primary: #3483FA;;
 $error: $red;
 $text-color: #333;
 
@@ -91,7 +91,7 @@ $border-radius-2: 0.25rem;
 $border-radius-3: 0.5rem;
 $border-radius-4: 1rem;
 $border-radius-100: 100%;
-$border-radius-pill: 9999px;
+$border-radius-pill: 4px;
 
 $border-types: (
   ("0", $border-radius-0),

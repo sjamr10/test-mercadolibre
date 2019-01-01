@@ -116,7 +116,7 @@
   }
 
   &:active {
-    background-color: $dark-green;
+    background-color: $primary;
     color: $white;
 
     svg {
@@ -125,7 +125,7 @@
   }
 
   &:hover {
-    background-color: $light-green;
+    background-color: $primary;
     color: $white;
 
     svg {

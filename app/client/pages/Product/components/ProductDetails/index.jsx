@@ -1,5 +1,8 @@
 import React from 'react';
 
+import Button from 'app/client/components/input-components/Button';
+
+
 if (!__SSR__) {
   require('./styles.scss');
 }
@@ -35,7 +38,7 @@ const ProductDetails = (props) => {
             </div>
             <div className="row">
               <div className="button col">
-                Button
+                <Button title="Comprar" />
               </div>
             </div>
           </div>
