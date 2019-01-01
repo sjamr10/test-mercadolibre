@@ -28,8 +28,12 @@ class SearchBox extends Component {
 
   search = () => {
     const params = this.form.current.elements;
-    params.search.value = 'ipod';
-    this.form.current.submit();
+    params.search.value = this.textInput.current.getValue();
+    if (params.search.value !== 'undefined') {
+      this.form.current.submit();
+    } else {
+      this.focus();
+    }
   }
 
   render() {
