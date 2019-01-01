@@ -1,6 +1,8 @@
 @import "app/assets/scss/utils.scss";
 
 .rcc-breadcrumb {
+  margin-left: 0px;
+  margin-right: 0px;
   padding: 16px 192px;
 
   @include media-breakpoint-down(lg) {
