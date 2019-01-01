@@ -5,6 +5,10 @@
   padding-bottom: 16px;
   margin-bottom: 3px;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @include media-breakpoint-down(xs) {
     padding-top: 16px;
   }
