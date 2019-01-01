@@ -12,12 +12,12 @@ const ProductDetails = (props) => {
     return (
       <div className="rcc-product-details">
         <div className="product row">
-          <div className="picture-col col-12 col-lg-7">
+          <div className="picture-col col-12 col-lg-8">
             <div className="picture">
               <img src={product.picture} alt="Foto del producto" />
             </div>
           </div>
-          <div className="info col-12 col-lg-3">
+          <div className="info col-12 col-lg-4">
             <div className="row">
               <div className="condition col">
                 {product.condition === 'new' ? 'Nuevo' : 'Usado'} - {product.sold_quantity} vendidos
@@ -48,7 +48,7 @@ const ProductDetails = (props) => {
               </div>
             </div>
             <div className="row">
-              <div className="text col-7">
+              <div className="text col-12 col-lg-7">
                 {product.description}
               </div>
             </div>

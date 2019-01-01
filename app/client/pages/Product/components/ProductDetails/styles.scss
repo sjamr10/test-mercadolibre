@@ -2,67 +2,114 @@
 
 .rcc-product-details {
   background-color: #EEE;
-  padding: 0px 80px 16px;
+  padding: 0px 128px 16px;
 
   @include media-breakpoint-down(lg) {
     padding: 0px 64px 16px;
   }
 
   @include media-breakpoint-down(md) {
-    padding: 0px 48px 16px;
-  }
-
-  @include media-breakpoint-down(sm) {
     padding: 0px 32px 16px;
   }
 
   .product {
-    height: 700px;
     background-color: #FFF;
+    height: 720px;
+
+    @include media-breakpoint-down(lg) {
+      height: 500px;
+    }
+
+    @include media-breakpoint-down(md) {
+      height: 700px;
+    }
 
     .picture-col {
+      height: 700px;
+      padding-top: 32px;
       padding-left: 0;
       padding-right: 0;
-      margin-left: 16px;
 
-      @include media-breakpoint-down(xs) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+      display: flex;
+      justify-content: center;
 
       .picture {
         width: 680px;
-        height: 500px;
 
         img {
           width: 100%;
           max-width: 680px;
+          max-height: 100%;
 
           border-radius: 4px;
+        }
+      }
+
+      @include media-breakpoint-down(lg) {
+        height: 480px;
+
+        .picture {
+          width: 480px;
+
+          img {
+            max-width: 480px;
+          }
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        height: 400px;
+
+        .picture {
+          width: 380px;
+
+          img {
+            max-width: 380px;
+          }
         }
       }
     }
 
     .info {
+      padding-top: 32px;
+
       .condition {
-        padding-top: 32px;
         font-size: 14px;
+        font-weight: 350;
       }
 
       .title {
         padding-top: 16px;
         padding-right: 80px;
         font-size: 24px;
+        font-weight: 600;
       }
 
       .price {
         padding-top: 32px;
         font-size: 46px;
+        font-weight: 400;
       }
 
       .button {
         padding-top: 32px;
+        padding-right: 32px;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding-top: 0px;
+        padding-left: 176px;
+        padding-right: 176px;
+
+        .col {
+          text-align: center;
+          padding-right: 15px;
+          padding-top: 16px;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 32px;
         padding-right: 32px;
       }
     }
@@ -72,19 +119,49 @@
     background-color: #FFF;
     padding-left: 32px;
 
+    @include media-breakpoint-down(md) {
+      padding-left: 0px;
+    }
+
     .description-col {
       padding-left: 0;
 
       .title {
-        font-size: 28px;
         padding-left: 0px;
         padding-bottom: 32px;
+        font-size: 28px;
+        font-weight: 350;
+
+        @include media-breakpoint-down(md) {
+          padding-bottom: 16px;
+        }
       }
 
       .text {
         padding-right: 0px;
         padding-bottom: 32px;
         font-size: 16px;
+        font-weight: 450;
+        color: #999 !important;
+
+        @include media-breakpoint-down(md) {
+          padding-left: 0px;
+        }
+      }
+
+      @include media-breakpoint-down(md) {
+        padding-top: 0px;
+        padding-left: 128px;
+        padding-right: 128px;
+
+        .col {
+          text-align: center;
+        }
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 48px;
+        padding-right: 48px;
       }
     }
   }
