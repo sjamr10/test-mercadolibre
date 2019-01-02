@@ -34,7 +34,7 @@ class SearchBox extends Component {
   search = () => {
     const params = this.form.current.elements;
     params.search.value = this.textInput.current.getValue();
-    if (params.search.value !== 'undefined') {
+    if (params.search.value !== 'undefined' && params.search.value !== '') {
       this.form.current.submit();
     } else {
       this.focus();
