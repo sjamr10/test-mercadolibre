@@ -21,7 +21,7 @@
     }
 
     @include media-breakpoint-down(md) {
-      height: 750px;
+      height: 780px;
     }
 
     .picture-col {
@@ -62,6 +62,8 @@
 
         .picture {
           width: 380px;
+          padding-left: 8px;
+          padding-right: 8px;
 
           img {
             max-width: 380px;
