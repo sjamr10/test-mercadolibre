@@ -1,6 +1,6 @@
 @import "app/assets/scss/utils.scss";
 
-.rcc-items-loading-cards {
+.rcc-product-loading-card {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -23,6 +23,7 @@
   }
 
   .loading-card {
+    height: 700px;
     margin-bottom: 8px;
     padding: 0px 0px 15px 0px;
     background-color: $white;
@@ -61,7 +62,7 @@
     }
 
     .blank {
-      height: 32px;
+      height: 256px;
     }
   }
 }

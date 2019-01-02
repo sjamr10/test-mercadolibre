@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from 'app/client/components/Header';
 import Breadcrumb from 'app/client/components/Breadcrumb';
 import ProductDetails from 'app/client/pages/Product/components/ProductDetails';
+import ProductLoadingCard from 'app/client/pages/Product/components/ProductLoadingCard';
 
 import { Item } from 'app/client/api';
 
@@ -49,6 +50,7 @@ class ProductView extends Component {
     return (
       <div className="view product-view">
         <Header />
+        <ProductLoadingCard />
       </div>
     );
   }
