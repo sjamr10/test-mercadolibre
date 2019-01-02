@@ -23,12 +23,10 @@ const formatItems = (results) => results.map((item) => ({
   state_name: item.address.state_name,
 }));
 
-const render = (req, res) => {
-  const { search } = req.query;
-
+const getItems = (search) => new Promise((resolve, reject) => {
   getResults(search)
-    .then((response) => {
-      const { results } = response[0].data;
+    .then((resultsResp) => {
+      const { results } = resultsResp[0].data;
 
       getCategories(results[0].category_id).then((categoriesResp) => {
         const categories = formatCategories(categoriesResp[0].data.path_from_root);
@@ -36,35 +34,20 @@ const render = (req, res) => {
         const limit = 4;
         const items = formatItems(results.slice(0, limit));
 
-        const ssrData = {
-          search,
-          results: {
-            author: {
-              name: 'Sergio',
-              lastname: 'Miranda',
-            },
-            categories,
-            items,
+        const response = {
+          author: {
+            name: 'Sergio',
+            lastname: 'Miranda',
           },
+          categories,
+          items,
         };
 
-        res.locals.REACT_STATE = {
-          ...res.locals.REACT_STATE,
-          ...ssrData,
-        };
-
-        res.render('items');
-      }).catch((err) => {
-        res.status(500);
-        res.locals.error = err;
+        resolve(response);
       });
-    })
-    .catch((err) => {
-      res.status(500);
-      res.locals.error = err;
     });
-};
+});
 
 export default {
-  render,
+  getItems,
 };

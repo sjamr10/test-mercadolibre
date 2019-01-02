@@ -8,6 +8,7 @@ module.exports = yup.object().shape({
     .integer(),
   HOST: yup.string().required(),
   API: yup.object({
+    BASE_URL: yup.string(),
     MAX_RETRIES: yup
       .number()
       .positive()
@@ -16,6 +17,18 @@ module.exports = yup.object().shape({
       .number()
       .positive()
       .integer(),
-    BASE_URL: yup.string(),
+  }),
+  MERCADOLIBRE: yup.object({
+    API: yup.object({
+      BASE_URL: yup.string(),
+      MAX_RETRIES: yup
+        .number()
+        .positive()
+        .integer(),
+      TIMEOUT: yup
+        .number()
+        .positive()
+        .integer(),
+    }),
   }),
 });

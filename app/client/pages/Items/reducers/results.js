@@ -1,15 +1,24 @@
 const defaultState = {
-  results: [],
+  categories: [],
+  items: [],
 };
 
-export const SET_RESULTS = 'SET_RESULTS';
+export const SET_CATEGORIES = 'SET_CATEGORIES';
+export const SET_ITEMS = 'SET_ITEMS';
 
 export default function (state = defaultState, action) {
   switch (action.type) {
-    case SET_RESULTS: {
+    case SET_CATEGORIES: {
       return {
         ...state,
-        results: action.payload,
+        categories: action.payload,
+      };
+    }
+
+    case SET_ITEMS: {
+      return {
+        ...state,
+        items: action.payload,
       };
     }
 
@@ -20,7 +29,10 @@ export default function (state = defaultState, action) {
 }
 
 export const Actions = {
-  setResults: (payload) => (dispatch) => {
-    dispatch({ type: 'SET_RESULTS', payload });
+  setCategories: (payload) => (dispatch) => {
+    dispatch({ type: 'SET_CATEGORIES', payload });
+  },
+  setItems: (payload) => (dispatch) => {
+    dispatch({ type: 'SET_ITEMS', payload });
   },
 };
