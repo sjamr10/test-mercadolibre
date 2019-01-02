@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import qs from 'qs';
 
 import TextInput from '../input-components/Input/TextInput';
 
@@ -17,7 +18,11 @@ class SearchBox extends Component {
   }
 
   componentDidMount() {
-    this.focus();
+    const query = qs.parse(window.location.search.replace('?', '')).search || '';
+    this.setValue(query);
+    if (window.location.href.split('/').pop() === '') {
+      this.focus();
+    }
   }
 
   getValue = () => this.textInput.current.getValue();
