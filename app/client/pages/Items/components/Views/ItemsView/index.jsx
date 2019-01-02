@@ -10,9 +10,11 @@ import { Search } from 'app/client/api';
 
 import { Actions as ResultsActions } from 'app/client/pages/Items/reducers/results';
 
+
 if (!__SSR__) {
   require('./styles.scss');
 }
+
 
 class ItemsView extends Component {
   componentDidMount() {

@@ -1,26 +1,24 @@
-const { Product, Categories } = require('app/server/api');
+const { Item, Categories } = require('app/server/api');
 
 
 const getProducInfo = (id) =>
-  Promise.all([Product.getProduct(id), Product.getDescription(id)]);
+  Promise.all([Item.getItem(id), Item.getDescription(id)]);
 
 const getCategories = (id) =>
   Promise.all([Categories.getCategories(id)]);
 
 const formatCategories = (categories) => categories.map((category) => category.name);
 
-const render = (req, res) => {
-  const id = req.path.split('/').pop();
-
+const getProduct = (id) => new Promise((resolve, reject) => {
   getProducInfo(id)
-    .then((response) => {
-      const product = response[0].data;
+    .then((productResp) => {
+      const product = productResp[0].data;
 
       getCategories(product.category_id)
         .then((categoriesResp) => {
           const categories = formatCategories(categoriesResp[0].data.path_from_root);
 
-          const description = response[1].data;
+          const description = productResp[1].data;
 
           const item = {
             id,
@@ -38,26 +36,19 @@ const render = (req, res) => {
             categories,
           };
 
-          const ssrData = {
-            product: {
-              author: {
-                name: 'Sergio',
-                lastname: 'Miranda',
-              },
-              item,
+          const response = {
+            author: {
+              name: 'Sergio',
+              lastname: 'Miranda',
             },
+            item,
           };
 
-          res.locals.REACT_STATE = {
-            ...res.locals.REACT_STATE,
-            ...ssrData,
-          };
-
-          res.render('product');
+          resolve(response);
         });
     });
-};
+});
 
 export default {
-  render,
+  getProduct,
 };

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Header from 'app/client/components/Header';
 import Breadcrumb from 'app/client/components/Breadcrumb';
 import ProductDetails from 'app/client/pages/Product/components/ProductDetails';
+
+import { Item } from 'app/client/api';
+
+import { Actions as ItemActions } from 'app/client/pages/Product/reducers/item';
 
 
 if (!__SSR__) {
@@ -11,19 +15,41 @@ if (!__SSR__) {
 }
 
 
-const ProductView = (props) => {
-  const { item } = props.product;
+class ProductView extends Component {
+  componentDidMount() {
+    const id = window.location.href.split('/').pop();
+    this.getItem(id);
+  }
 
-  return (
-    <div className="view product-view">
-      <Header />
-      <Breadcrumb categories={item ? item.categories : []} />
-      <ProductDetails product={item} />
-    </div>
-  );
-};
+  getItem = (id) => {
+    Item.getItem(id)
+      .then((response) => {
+        const { item } = response.data;
+        this.props.setItem(item);
+      });
+  }
 
-export default connect((state) => state)(ProductView);
+  render() {
+    const { item } = this.props.item;
+
+    if (item) {
+      return (
+        <div className="view product-view">
+          <Header />
+          <Breadcrumb categories={item.categories} />
+          <ProductDetails product={item} />
+        </div>
+      );
+    }
+    return (
+      <div className="view product-view">
+        <Header />
+      </div>
+    );
+  }
+}
+
+export default connect((state) => state, ItemActions)(ProductView);
 
 export const META = {
   name: 'product-view',

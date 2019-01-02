@@ -1,8 +1,7 @@
 const express = require('express');
 
-const product = require('./handlers/product');
-
 const items = require('app/server/lib/items');
+const product = require('app/server/lib/product');
 
 
 const router = express.Router();
@@ -17,15 +16,26 @@ router.get('/items', (req, res) => {
   res.render('items');
 });
 
-router.get('/items/:id', product.default.render);
+router.get('/items/:id', (req, res) => {
+  res.render('product');
+});
 
 
 // API
 
-router.get('/api/search', (req, res) => {
+router.get('/api/items', (req, res) => {
   const { q } = req.query;
 
   items.default.getItems(q)
+    .then((response) => {
+      res.json(response);
+    });
+});
+
+router.get('/api/items/:id', (req, res) => {
+  const id = req.path.split('/').pop();
+
+  product.default.getProduct(id)
     .then((response) => {
       res.json(response);
     });
