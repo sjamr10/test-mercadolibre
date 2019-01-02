@@ -26,7 +26,12 @@ class ProductView extends Component {
       .then((response) => {
         const { item } = response.data;
         this.props.setItem(item);
+        this.setPageTitle(item.title);
       });
+  }
+
+  setPageTitle = (title) => {
+    document.title = `${title} | Test Mercadolibre`;
   }
 
   render() {

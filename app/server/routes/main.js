@@ -9,15 +9,15 @@ const router = express.Router();
 // PAGES
 
 router.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', { title: 'Home | Test Mercadolibre' });
 });
 
 router.get('/items', (req, res) => {
-  res.render('items');
+  res.render('items', { title: `${req.query.search} | Test Mercadolibre` });
 });
 
 router.get('/items/:id', (req, res) => {
-  res.render('product');
+  res.render('product', { title: 'Producto | Test Mercadolibre' });
 });
 
 

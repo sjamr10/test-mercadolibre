@@ -1,5 +1,8 @@
 extends layouts/index.pug
 
+block seo
+  title= title
+
 block css
   link(href=MANIFEST['items.css'], rel='stylesheet')
 
