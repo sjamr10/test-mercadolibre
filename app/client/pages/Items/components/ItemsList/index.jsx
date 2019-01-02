@@ -12,7 +12,7 @@ const ItemsList = (props) => {
 
   return (
     <div className="rcc-items-list">
-      {items ? items.map((item) => (<Item key={item.id} item={item} />)) : ''}
+      {items.map((item) => (<Item key={item.id} item={item} />))}
     </div>
   );
 };

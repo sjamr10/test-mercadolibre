@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import qs from 'qs';
 
+import ItemsLoadingCards from 'app/client/components/ItemsLoadingCards';
 import Header from 'app/client/components/Header';
 import Breadcrumb from 'app/client/components/Breadcrumb';
 import ItemsList from 'app/client/pages/Items/components/ItemsList';
@@ -32,11 +33,21 @@ class ItemsView extends Component {
   }
 
   render() {
+    const { categories, items } = this.props.results;
+
+    if (categories && items) {
+      return (
+        <div className="view items-view">
+          <Header />
+          <Breadcrumb categories={categories} />
+          <ItemsList items={items} />
+        </div>
+      );
+    }
     return (
       <div className="view items-view">
         <Header />
-        <Breadcrumb categories={this.props.results.categories} />
-        <ItemsList items={this.props.results.items} />
+        <ItemsLoadingCards />
       </div>
     );
   }

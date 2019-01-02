@@ -1,6 +1,6 @@
 const defaultState = {
-  categories: [],
-  items: [],
+  categories: null,
+  items: null,
 };
 
 export const SET_CATEGORIES = 'SET_CATEGORIES';

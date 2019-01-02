@@ -13,28 +13,22 @@ const Breadcrumb = (props) => {
     <div className="rcc-breadcrumb row">
       <div className="col-12">
         {
-          categories ?
-            categories
-            .slice(0, categories.length - 1)
-            .map((category) =>
-              (<span key={category}>
-                <span className="category">
-                  {category}
-                </span>
-                <span className="arrow">
-                  {'>'}
-                </span>
-              </span>))
-            :
-              ''
+          categories
+          .slice(0, categories.length - 1)
+          .map((category) =>
+            (<span key={category}>
+              <span className="category">
+                {category}
+              </span>
+              <span className="arrow">
+                {'>'}
+              </span>
+            </span>))
         }
         {
-          categories ?
-            <span className="current-category">
-              {categories.slice(-1)[0]}
-            </span>
-            :
-              ''
+          <span className="current-category">
+            {categories.slice(-1)[0]}
+          </span>
         }
       </div>
     </div>

@@ -1,0 +1,94 @@
+@import "app/assets/scss/utils.scss";
+
+.rcc-items-loading-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 10px 0 20px;
+
+  .header {
+    .col-8 {
+      padding-right: 2rem;
+
+      @include media-breakpoint-down(lg) {
+        padding-right: 4rem;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding-right: 6rem;
+      }
+
+      @include media-breakpoint-down(sm) {
+        padding-right: 14.5rem;
+      }
+
+      @include media-breakpoint-down(xs) {
+        padding-right: 5rem;
+      }
+    }
+
+    .line {
+      min-height: 10px;
+      background-color: $primary;
+    }
+  }
+
+  .loading-mask {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+  }
+
+  .loading-card {
+    margin-bottom: 8px;
+    padding: 0px 0px 15px 0px;
+    background-color: $white;
+
+    @include media-breakpoint-down(sm) {
+      margin: 20px 0px 10px 0px;
+    }
+
+    .line {
+      min-height: 10px;
+      margin-bottom: 15px;
+    }
+
+    .line {
+      background-color: $primary;
+    }
+
+    div[class*='block-'] {
+      height: 10px;
+      margin: 10px;
+    }
+
+    .block-1 {
+      margin-bottom: 8px;
+      max-width: 70%;
+    }
+
+    .block-4 {
+      margin-bottom: 40px !important;
+      max-width: 80%;
+      height: 20px !important;
+
+      @include media-breakpoint-down(sm) {
+        margin-bottom: 0px !important;
+      }
+    }
+
+    .blank {
+      height: 32px;
+    }
+  }
+}
