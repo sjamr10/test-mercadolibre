@@ -1,4 +1,5 @@
 import React from 'react';
+import Formatter from 'app/lib/formatter';
 
 import Button from 'app/client/components/input-components/Button';
 
@@ -33,7 +34,8 @@ const ProductDetails = (props) => {
             </div>
             <div className="row">
               <div className="price col">
-                $ {product.price.amount}
+                $ {Formatter.thousands(product.price.amount)}
+                {product.price.decimals === 0 ? <span className="cents">00</span> : <span className="cents">{product.price.decimals * 100}</span>}
               </div>
             </div>
             <div className="row">
