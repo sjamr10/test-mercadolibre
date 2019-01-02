@@ -16,6 +16,10 @@
     img {
       max-width: 50px;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .search-box {
