@@ -12,7 +12,14 @@ if (!__SSR__) {
 const ProductDetails = (props) => {
   const { product } = props;
 
-  const decimals = (product.price.decimals === 0 ? <span className="cents">00</span> : <span className="cents">{product.price.decimals * 100}</span>);
+  const { decimals } = product.price;
+
+  const cents = (
+    decimals < 0.1
+      ?
+        <span className="cents">0{decimals * 100}</span>
+      :
+        <span className="cents">{decimals * 100}</span>);
 
   return (
     <div className="rcc-product-details">
@@ -35,7 +42,7 @@ const ProductDetails = (props) => {
           </div>
           <div className="row">
             <div className="price col">
-              $ {Formatter.thousands(product.price.amount)}{decimals}
+              $ {Formatter.thousands(product.price.amount)}{cents}
             </div>
           </div>
           <div className="row">
