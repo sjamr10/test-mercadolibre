@@ -1,7 +1,5 @@
 const nconf = require('nconf');
 const { createLogger, format, transports } = require('winston');
-
-const { LogstashUDP } = require('winston-logstash-udp');
 const { compact } = require('lodash');
 
 const Logger = createLogger({
