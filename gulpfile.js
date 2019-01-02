@@ -13,7 +13,6 @@ let isProduction = production.includes(process.env.NODE_ENV);
 
 const assets = {
   bootstrapAssets: 'node_modules/bootstrap-sass/assets',
-  fontAwesomeAssets: 'node_modules/font-awesome/scss',
 };
 
 gulp.task('styles', () => {
