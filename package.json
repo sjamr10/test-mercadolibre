@@ -5,6 +5,10 @@
   "license": "ISC",
   "author": "Sergio Miranda",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sjamr10/test-mercadolibre"
+  },
   "scripts": {
     "dev": "NODE_ENV=development node pm2/boot.js",
     "start": "node pm2/boot.js"
