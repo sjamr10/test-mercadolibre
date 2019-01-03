@@ -7,6 +7,23 @@ const getResults = (search) =>
 const getCategories = (id) =>
   Promise.all([Categories.getCategories(id)]);
 
+const getCategoryWithMostResults = (categories) => {
+  let mf = 1;
+  let m = 0;
+  let item;
+  for (let i = 0; i < categories.length; i++) {
+    for (let j = i; j < categories.length; j++) {
+      if (categories[i] === categories[j]) { m++; }
+      if (mf < m) {
+        mf = m;
+        item = categories[i];
+      }
+    }
+    m = 0;
+  }
+  return item;
+};
+
 const formatCategories = (categories) => categories.map((category) => category.name);
 
 const formatItems = (results) => results.map((item) => ({
@@ -28,7 +45,10 @@ const getItems = (search) => new Promise((resolve, reject) => {
     .then((resultsResp) => {
       const { results } = resultsResp[0].data;
 
-      getCategories(results[0].category_id).then((categoriesResp) => {
+      const mostResultsCategory =
+        getCategoryWithMostResults(results.map((result) => result.category_id));
+
+      getCategories(mostResultsCategory).then((categoriesResp) => {
         const categories = formatCategories(categoriesResp[0].data.path_from_root);
 
         const limit = 4;
