@@ -20,7 +20,8 @@ class SearchBox extends Component {
   componentDidMount() {
     const query = qs.parse(window.location.search.replace('?', '')).search || '';
     this.setValue(query);
-    if (window.location.href.split('/').pop() === '') {
+    const resource = window.location.href.split('/').pop();
+    if (resource === '' || resource === '?') {
       this.focus();
     }
   }
