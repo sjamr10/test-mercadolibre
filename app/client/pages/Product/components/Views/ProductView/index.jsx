@@ -32,7 +32,7 @@ class ProductView extends Component {
   }
 
   setPageTitle = (title) => {
-    document.title = `${title} | Test Mercadolibre`;
+    document.title = `${title} | Test MercadoLibre`;
   }
 
   render() {
